@@ -3,6 +3,8 @@ import Button from '@material-ui/core/Button';
 import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
+import './landing.scss';
+
 class Landing extends PureComponent {
   render() {
     const { history } = this.props;

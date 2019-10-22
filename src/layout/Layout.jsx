@@ -4,7 +4,6 @@ import React, { PureComponent } from 'react';
 import { createBrowserHistory } from 'history';
 import { BrowserRouter } from 'react-router-dom';
 
-import Header from './components/header/Header';
 import Main from './components/main/Main';
 import './layout.scss';
 import Routes from '../routes/Routes';
@@ -16,10 +15,6 @@ class Layout extends PureComponent {
     return (
       <div className="layout">
         <BrowserRouter history={myHistory}>
-          <header className="header">
-            <Header />
-          </header>
-
           <main className="main">
             <Main>
               <Routes />

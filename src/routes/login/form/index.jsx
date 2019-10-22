@@ -27,8 +27,8 @@ const Form = (props) => {
         name="username"
         label="Username"
         value={username}
-        onChange={change.bind(null, 'username')}
         fullWidth
+        onChange={change.bind(null, 'username')}
       />
       <TextField
         id="password"
@@ -36,15 +36,15 @@ const Form = (props) => {
         type="password"
         label="Password"
         value={password}
-        onChange={change.bind(null, 'password')}
         fullWidth
+        onChange={change.bind(null, 'password')}
       />
       <Button
         type="submit"
         variant={('text', 'outlined')}
         color="primary"
-        fullWidth
         disabled={!isValid}
+        fullWidth
       >
         Submit
       </Button>
