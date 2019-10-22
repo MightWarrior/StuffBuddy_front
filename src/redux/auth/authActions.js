@@ -26,7 +26,7 @@ export const userLogin = (user) => (dispatch) => {
 export const userLogout = () => (dispatch) => {
   dispatch(requestPending);
 
-  logout('logout')
+  logout('signout')
     .then(() => dispatch(logoutSuccess()))
     .catch(() => dispatch(logoutFailure()));
 };

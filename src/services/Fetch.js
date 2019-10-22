@@ -1,4 +1,4 @@
-const customFetch = (url, options) => fetch(`/${url}`, options)
+const customFetch = (url, options) => fetch(`/api/${url}`, options)
   .then((res) => {
     if (!res.ok) {
       return Promise.reject;
