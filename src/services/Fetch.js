@@ -1,4 +1,4 @@
-const customFetch = (url, options) => fetch(`/api/${url}`, options)
+const customFetch = (url, options) => fetch(`http://localhost:8800/${url}`, options)
   .then((res) => {
     if (!res.ok) {
       return Promise.reject;
@@ -7,15 +7,13 @@ const customFetch = (url, options) => fetch(`/api/${url}`, options)
   })
   .then((res) => res);
 
-export const login = (url, user) => {
-  customFetch(url, {
-    method: 'POST',
-    body: JSON.stringify(user),
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  });
-};
+export const login = (url, user) => customFetch(url, {
+  method: 'POST',
+  body: JSON.stringify(user),
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
 
 export const register = (url, user) => customFetch(url, {
   method: 'POST',

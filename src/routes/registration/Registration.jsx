@@ -16,7 +16,7 @@ class Registration extends PureComponent {
       <>
         <Header />
         <div className="registration-wrapper">
-          <div className="registration-logo"><h2>LOGIN</h2></div>
+          <div className="registration-logo"><h2>REGISTRATION</h2></div>
           <div className="registration-form">
             <Formik
               component={Form}
@@ -34,7 +34,7 @@ class Registration extends PureComponent {
             color="inherit"
             onClick={() => { history.push('/login'); }}
           >
-        REGISTER
+        LOGIN
           </Button>
         </div>
       </>

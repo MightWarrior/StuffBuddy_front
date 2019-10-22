@@ -20,7 +20,7 @@ export const userLogin = (user) => (dispatch) => {
 
   login('login', user)
     .then((res) => dispatch(loginSuccess(res)))
-    .catch(() => loginFailure());
+    .catch(() => dispatch(loginFailure()));
 };
 
 export const userLogout = () => (dispatch) => {
