@@ -4,6 +4,7 @@ module.exports = {
     es6: true,
   },
   extends: [
+    'prettier',
     'airbnb',
   ],
   globals: {

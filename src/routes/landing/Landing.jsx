@@ -14,18 +14,17 @@ class Landing extends PureComponent {
           <h1>STUFFBUDDY</h1>
         </div>
         <div className="landing-article">
-          <h3>
-The largest, most trusted
-tech sharing community
-          </h3>
+          <h3>The largest, most trusted tech sharing community</h3>
         </div>
         <div className="landing=button">
           <Button
             variant={('text', 'outlined')}
             color="inherit"
-            onClick={() => { history.push('/register'); }}
+            onClick={() => {
+              history.push('/register');
+            }}
           >
-        GET STARTED
+            GET STARTED
           </Button>
         </div>
       </div>

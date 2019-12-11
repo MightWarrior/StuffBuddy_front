@@ -7,7 +7,9 @@ import PropTypes from 'prop-types';
 
 const Form = (props) => {
   const {
-    values: { username, password, passwordConfirm },
+    values: {
+ email, password, passwordConfirm, username 
+},
     errors,
     touched,
     handleChange,
@@ -25,9 +27,20 @@ const Form = (props) => {
   return (
     <form onSubmit={handleSubmit}>
       <TextField
+        id="email"
+        name="email"
+        label="Email"
+        value={email}
+        helperText={touched.email ? errors.email : ''}
+        error={touched.email && Boolean(errors.email)}
+        onChange={change.bind(null, 'email')}
+        fullWidth
+      />
+      <TextField
         id="username"
         name="username"
-        label="Username"
+        type="username"
+        label="Name"
         value={username}
         helperText={touched.username ? errors.username : ''}
         error={touched.username && Boolean(errors.username)}
@@ -77,6 +90,7 @@ Form.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
   isValid: PropTypes.bool.isRequired,
   setFieldTouched: PropTypes.func.isRequired,
+  username: PropTypes.string.isRequired,
 };
 
 export default Form;

@@ -4,6 +4,9 @@ import Landing from './landing/Landing';
 import Login from './login';
 import Registration from './registration';
 import Menu from './menu';
+import { PrivateRoute } from '../_shared/privateRoute';
+import Profile from './profile';
+import AdminPanel from './adminPanel';
 
 class Router extends PureComponent {
   render() {
@@ -13,6 +16,8 @@ class Router extends PureComponent {
         <Route component={Landing} exact path="/" />
         <Route component={Login} exact path="/login" />
         <Route component={Registration} exact path="/register" />
+        <Route component={Profile} exact path="/profile" />
+        <Route component={AdminPanel} exact path="/adminpanel" />
       </Switch>
     );
   }

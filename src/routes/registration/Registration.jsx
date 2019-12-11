@@ -11,12 +11,14 @@ import validationSchema from '../../utils/validation';
 class Registration extends PureComponent {
   render() {
     const { history, userRegister } = this.props;
-    const initialValues = { username: '', password: '' };
+    const initialValues = { email: '', password: '', username: '' };
     return (
       <>
         <Header />
         <div className="registration-wrapper">
-          <div className="registration-logo"><h2>REGISTRATION</h2></div>
+          <div className="registration-logo">
+            <h2>REGISTRATION</h2>
+          </div>
           <div className="registration-form">
             <Formik
               component={Form}
@@ -32,9 +34,11 @@ class Registration extends PureComponent {
           <Button
             variant={('text', 'outlined')}
             color="inherit"
-            onClick={() => { history.push('/login'); }}
+            onClick={() => {
+              history.push('/login');
+            }}
           >
-        LOGIN
+            LOGIN
           </Button>
         </div>
       </>
