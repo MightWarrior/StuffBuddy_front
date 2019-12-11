@@ -74,7 +74,6 @@ const Form = (props) => {
         fullWidth
         variant={('text', 'outlined')}
         color="primary"
-        disabled={!isValid}
       >
         Submit
       </Button>

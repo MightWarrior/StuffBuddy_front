@@ -26,6 +26,7 @@ const validationSchema = Yup.object().shape({
   rating: Yup.number('Enter the rating'),
   frompice: Yup.number('Enter the base price'),
   toprice: Yup.number('Enter the number'),
+  description: Yup.string('Enter the type').matches(/[a-zA-Z]/, 'Description can only contain Latin letters'),
 });
 
 export default validationSchema;

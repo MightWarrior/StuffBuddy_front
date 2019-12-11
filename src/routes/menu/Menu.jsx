@@ -5,7 +5,7 @@ import Button from '@material-ui/core/Button';
 import { Formik } from 'formik';
 
 import Header from '../../layout/components/header/Header';
-import validationSchema from '../../utils/validation';
+// import validationSchema from '../../utils/validation';
 import Form from './form/Form';
 import FilterForm from './form/FilterForm';
 import Card from './card/Card';
@@ -57,7 +57,6 @@ class Menu extends PureComponent {
             <Formik
               component={Form}
               initialValues={initialValuesSearch}
-              validationSchema={validationSchema}
               onSubmit={(values) => {
                 deviceSearch({
                   text: values.text,
@@ -89,7 +88,6 @@ class Menu extends PureComponent {
                 <Formik
                   component={FilterForm}
                   initialValues={initialValuesFilter}
-                  validationSchema={validationSchema}
                   onSubmit={(values) => {
                     deviceSearch({
                       text: '',

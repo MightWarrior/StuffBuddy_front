@@ -3,13 +3,14 @@ import { Formik } from 'formik';
 import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button';
-import Form from './Form';
+import Form from './form';
+import Header from '../../layout/components/header/Header';
 
-import validationSchema from '../../utils/validation';
+// import validationSchema from '../../utils/validation';
 
 class AddNew extends PureComponent {
   render() {
-    const { history, postCards } = this.props;
+    const { history, deviceCreate } = this.props;
     const initialValues = {
       DeviceType: '',
       Name: '',
@@ -19,6 +20,7 @@ class AddNew extends PureComponent {
     return (
       <>
         <center>
+          <Header />
           <Button
             variant={('text', 'outlined')}
             color="black"
@@ -32,10 +34,9 @@ class AddNew extends PureComponent {
         </center>
         <Formik
           component={Form}
-          validationSchema={validationSchema}
           initialValues={initialValues}
           onSubmit={(values) => {
-            postCards(values);
+            deviceCreate(values);
             setTimeout(() => history.push('/menu'), 400);
           }}
         />
@@ -44,7 +45,7 @@ class AddNew extends PureComponent {
   }
 }
 AddNew.propTypes = {
-  postCards: PropTypes.func.isRequired,
+  deviceCreate: PropTypes.func.isRequired,
   history: PropTypes.element.isRequired,
 };
 

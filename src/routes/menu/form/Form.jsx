@@ -11,7 +11,6 @@ const Form = (props) => {
     errors,
     touched,
     handleChange,
-    isValid,
     setFieldTouched,
     handleSubmit,
   } = props;
@@ -39,7 +38,6 @@ const Form = (props) => {
         fullWidth
         variant={('text', 'outlined')}
         color="primary"
-        disabled={!isValid}
       >
         Submit
       </Button>
@@ -53,7 +51,6 @@ Form.propTypes = {
   errors: PropTypes.object.isRequired,
   touched: PropTypes.object.isRequired,
   handleSubmit: PropTypes.func.isRequired,
-  isValid: PropTypes.bool.isRequired,
   setFieldTouched: PropTypes.func.isRequired,
 };
 

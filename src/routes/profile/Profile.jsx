@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button';
 import { Formik } from 'formik';
 import Header from '../../layout/components/header/Header';
-import validationSchema from '../../utils/validation';
+// import validationSchema from '../../utils/validation';
 import './profile.scss';
 import Form from './form';
 
@@ -16,8 +16,13 @@ class Profile extends PureComponent {
     this.state = { ifChange: false };
   }
 
+  componentDidMount() {
+    const { userDevicesGet, user } = this.props;
+    userDevicesGet(user.email);
+  }
+
   render() {
-    const { user, userChange } = this.props;
+    const { user, userChange, userDevices } = this.props;
     const { ifChange } = this.state;
     const initialValues = { name: user.name, email: user.email };
     return (
@@ -52,7 +57,6 @@ class Profile extends PureComponent {
               <Formik
                 component={Form}
                 initialValues={initialValues}
-                validationSchema={validationSchema}
                 onSubmit={(values) => {
                   console.log(values);
                   userChange(values);
@@ -85,6 +89,7 @@ Your name is
 Profile.propTypes = {
   user: PropTypes.object.isRequired,
   userChange: PropTypes.func.isRequired,
+  userDevicesGet: PropTypes.func.isRequired,
 };
 
 export default Profile;
