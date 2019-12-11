@@ -6,7 +6,7 @@ import Button from '@material-ui/core/Button';
 import Form from './form';
 import Header from '../../layout/components/header/Header';
 
-// import validationSchema from '../../utils/validation';
+import { addNewSchema } from '../../utils/validation';
 
 class AddNew extends PureComponent {
   render() {
@@ -35,6 +35,7 @@ class AddNew extends PureComponent {
         <Formik
           component={Form}
           initialValues={initialValues}
+          validationSchema={addNewSchema}
           onSubmit={(values) => {
             deviceCreate(values);
             setTimeout(() => history.push('/menu'), 400);

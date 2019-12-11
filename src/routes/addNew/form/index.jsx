@@ -5,17 +5,15 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import PropTypes from 'prop-types';
 
-const Form = (props) => {
+const Form = props => {
   const {
-    values: {
- DeviceType, Name, Description, Price 
-},
+    values: { DeviceType, Name, Description, Price },
     errors,
     touched,
     handleChange,
     isValid,
     setFieldTouched,
-    handleSubmit,
+    handleSubmit
   } = props;
 
   const change = (name, e) => {
@@ -27,9 +25,9 @@ const Form = (props) => {
   return (
     <form onSubmit={handleSubmit}>
       <TextField
-        id="type"
-        name="type"
-        label="Device type"
+        id='type'
+        name='type'
+        label='Device type'
         helperText={touched.type ? errors.type : ''}
         error={touched.type && Boolean(errors.type)}
         value={DeviceType}
@@ -37,9 +35,9 @@ const Form = (props) => {
         fullWidth
       />
       <TextField
-        id="description"
-        name="description"
-        label="Description"
+        id='description'
+        name='description'
+        label='Description'
         helperText={touched.description ? errors.description : ''}
         error={touched.description && Boolean(errors.description)}
         value={Description}
@@ -47,9 +45,9 @@ const Form = (props) => {
         fullWidth
       />
       <TextField
-        id="name"
-        name="name"
-        label="Name"
+        id='name'
+        name='name'
+        label='Name'
         helperText={touched.name ? errors.name : ''}
         error={touched.name && Boolean(errors.name)}
         value={Name}
@@ -57,20 +55,20 @@ const Form = (props) => {
         fullWidth
       />
       <TextField
-        id="price"
-        name="price"
-        label="Price"
-        helperText={touched.toprice ? errors.toprice : ''}
-        error={touched.toprice && Boolean(errors.toprice)}
+        id='price'
+        name='price'
+        label='Price'
+        helperText={touched.price ? errors.price : ''}
+        error={touched.price && Boolean(errors.price)}
         value={Price}
         onChange={change.bind(null, 'price')}
         fullWidth
       />
       <Button
-        type="submit"
+        type='submit'
         fullWidth
         variant={('text', 'outlined')}
-        color="primary"
+        color='primary'
         disabled={!isValid}
       >
         Submit
@@ -86,7 +84,7 @@ Form.propTypes = {
   handleChange: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
   isValid: PropTypes.bool.isRequired,
-  setFieldTouched: PropTypes.func.isRequired,
+  setFieldTouched: PropTypes.func.isRequired
 };
 
 export default Form;

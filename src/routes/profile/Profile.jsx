@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button';
 import { Formik } from 'formik';
 import Header from '../../layout/components/header/Header';
-// import validationSchema from '../../utils/validation';
+import { profileSchema } from '../../utils/validation';
 import './profile.scss';
 import Form from './form';
 
@@ -57,6 +57,7 @@ class Profile extends PureComponent {
               <Formik
                 component={Form}
                 initialValues={initialValues}
+                validationSchema={profileSchema}
                 onSubmit={(values) => {
                   console.log(values);
                   userChange(values);

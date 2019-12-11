@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import Form from './form';
 import Header from '../../layout/components/header/Header';
 import './registration.scss';
-import validationSchema from '../../utils/validation';
+import { registrationSchema } from '../../utils/validation';
 
 class Registration extends PureComponent {
   render() {
@@ -23,7 +23,7 @@ class Registration extends PureComponent {
             <Formik
               component={Form}
               initialValues={initialValues}
-              validationSchema={validationSchema}
+              validationSchema={registrationSchema}
               onSubmit={(values) => {
                 userRegister(values);
                 setTimeout(() => history.push('/menu'), 400);
